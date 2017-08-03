@@ -9,7 +9,6 @@
 #import "TabbarViewController.h"
 
 #import "NavigationController.h"
-#import "TLUserLoginVC.h"
 #import "DataVC.h"
 
 #import <SDWebImageDownloader.h>
@@ -180,15 +179,6 @@
 
 #pragma mark- tabbar-delegate
 - (BOOL)didSelected:(NSInteger)idx tabBar:(UITabBar *)tabBar {
-    
-    if (idx == 4 && ![TLUser user].isLogin) {
-        
-        TLUserLoginVC *loginVC = [TLUserLoginVC new];
-        NavigationController *nav = [[NavigationController alloc] initWithRootViewController:loginVC];
-        [self presentViewController:nav animated:YES completion:nil];
-        
-        return NO;
-    }
     
     //
     self.selectedIndex = idx;

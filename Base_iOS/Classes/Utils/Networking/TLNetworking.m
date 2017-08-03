@@ -138,49 +138,36 @@
       [HttpLogger logJSONStringWithResponseObject:responseObject];
       
       if(self.showView){
-//          [hud hideAnimated:YES];
+          
           [TLProgressHUD dismiss];
       }
       
-      if([responseObject[@"errorCode"] isEqual:@"0"]){ //成功
+      if(success){
           
-          if(success){
-              success(responseObject);
-          }
+          success(responseObject);
+      }
+      
+      if(![responseObject[@"errorCode"] isEqual:@"0"]){ //成功
           
-      } else {
+          //          if ([responseObject[@"errorCode"] isEqual:@"4"]) {
+          //token错误  4
           
-          if (failure) {
-              failure(nil);
-          }
-          
-          if ([responseObject[@"errorCode"] isEqual:@"4"]) {
-              //token错误  4
-              
-              [TLAlert alertWithTitile:nil message:@"为了您的账户安全，请重新登录" confirmAction:^{
-//                  [[NSNotificationCenter defaultCenter] postNotificationName:kUserLoginOutNotification object:nil];
-              }];
-              return;
-              
-          }
+          //              [TLAlert alertWithTitile:nil message:@"为了您的账户安全，请重新登录" confirmAction:^{
+          ////                  [[NSNotificationCenter defaultCenter] postNotificationName:kUserLoginOutNotification object:nil];
+          //              }];
+          //              return;
+          //          }
           
           if(self.isShowMsg) { //异常也是失败
               
-//              [TLAlert alertWithError:responseObject[@"errorInfo"]];
               [TLAlert alertWithInfo:responseObject[@"errorInfo"]];
-
+              
           }
-      
-      
       }
-      
-      
-    
       
    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
        
-       if(self.showView){
-//           [hud hideAnimated:YES];
+       if(self.showView) {
            [TLProgressHUD dismiss];
        }
        
@@ -190,7 +177,7 @@
 
        }
        
-       if(failure){
+       if(failure) {
            failure(error);
        }
        

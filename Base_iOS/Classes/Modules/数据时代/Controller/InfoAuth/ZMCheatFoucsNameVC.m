@@ -10,6 +10,8 @@
 #import "AddressPickerView.h"
 #import "ZMCheatFoucsModel.h"
 
+#import "ZMCheatFoucsResultVC.h"
+
 @interface ZMCheatFoucsNameVC ()
 
 @property (nonatomic, strong) TLTextField *realName;    //真实姓名
@@ -81,7 +83,7 @@
     
     [self.view addSubview:self.realName];
     
-    self.idCard = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.realName.yy, kScreenWidth, 50) leftTitle:@"身份证号" titleWidth:105 placeholder:@"请输入身份证号"];
+    self.idCard = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.realName.yy, kScreenWidth, 50) leftTitle:@"身份证号码" titleWidth:105 placeholder:@"请输入身份证号码"];
     
     [self.view addSubview:self.idCard];
     
@@ -91,7 +93,7 @@
     
     [self.view addSubview:self.mobile];
     
-    self.bankCard = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.mobile.yy, kScreenWidth, 50) leftTitle:@"银行卡号" titleWidth:105 placeholder:@"请输入银行卡号"];
+    self.bankCard = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.mobile.yy, kScreenWidth, 50) leftTitle:@"银行卡号" titleWidth:105 placeholder:@"请输入银行卡号(选填)"];
     
     self.bankCard.keyboardType = UIKeyboardTypeNumberPad;
 
@@ -101,11 +103,11 @@
     
     [self.view addSubview:self.email];
     
-    self.address = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.email.yy, kScreenWidth, 50) leftTitle:@"省市区" titleWidth:105 placeholder:@"请选择省市区"];
+    self.address = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.email.yy, kScreenWidth, 50) leftTitle:@"省市区" titleWidth:105 placeholder:@"请选择省市区(选填)"];
     
     [self.view addSubview:self.address];
     
-    self.detailAddress = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.address.yy, kScreenWidth, 50) leftTitle:@"详细地址" titleWidth:105 placeholder:@"请输入详细地址"];
+    self.detailAddress = [[TLTextField alloc] initWithFrame:CGRectMake(0, self.address.yy, kScreenWidth, 50) leftTitle:@"详细地址" titleWidth:105 placeholder:@"请输入详细地址(选填)"];
     
     [self.view addSubview:self.detailAddress];
     
@@ -134,19 +136,26 @@
     
     if (![self.idCard.text valid]) {
         
-        [TLAlert alertWithInfo:@"请输入身份证号"];
+        [TLAlert alertWithInfo:@"请输入身份证号码"];
         return;
     }
     
     if (self.idCard.text.length != 18) {
         
-        [TLAlert alertWithInfo:@"请输入18位身份证号"];
+        [TLAlert alertWithInfo:@"请输入18位身份证号码"];
+        return;
+
     }
     
+    [self.view endEditing:YES];
+
     NSString *address = [NSString stringWithFormat:@"%@%@", self.address.text, self.detailAddress.text];
     
     TLNetworking *http = [TLNetworking new];
     
+    http.isShowMsg = NO;
+    http.showView = self.view;
+
     http.code = @"798021";
     http.parameters[@"idNo"] = self.idCard.text;
     http.parameters[@"realName"] = self.realName.text;
@@ -163,20 +172,24 @@
     //
     [http postWithSuccess:^(id responseObject) {
         
-        ZMCheatFoucsModel *foucsModel = [ZMCheatFoucsModel mj_objectWithKeyValues:responseObject[@"data"]];
+        ZMCheatFoucsResultVC *resultVC = [ZMCheatFoucsResultVC new];
         
-        if ([foucsModel.hit isEqualToString:@"yes"]) {
-            
-            [TLAlert alertWithSucces:@"哈哈哈，你已加入欺诈关注清单，是不是很兴奋"];
+        resultVC.title = @"欺诈关注清单结果";
+        
+        if ([responseObject[@"errorCode"] isEqual:@"0"]) {
+
+            ZMCheatFoucsModel *foucsModel = [ZMCheatFoucsModel mj_objectWithKeyValues:responseObject[@"data"]];
+
+            resultVC.foucsModel = foucsModel;
             
         } else {
+        
+            resultVC.result = NO;
             
-            [TLAlert alertWithInfo:@"哈哈哈，你还未加入欺诈关注清单，是不是很庆幸"];
+            resultVC.failureReason = responseObject[@"errorInfo"];
         }
         
-        //        [TLAlert alertWithSucces:[NSString stringWithFormat:@"查询成功, 您的欺诈评分是%@分",responseObject[@"data"][@"score"]]];
-        
-        //        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController pushViewController:resultVC animated:YES];
         
     } failure:^(NSError *error) {
         

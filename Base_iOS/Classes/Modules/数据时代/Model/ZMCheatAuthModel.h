@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSArray<NSString *> *verifyCodeList;
 
+@property (nonatomic, strong) NSArray<NSString *> *verifyInfoList;
+
 @end

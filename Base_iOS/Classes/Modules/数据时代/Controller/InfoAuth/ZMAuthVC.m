@@ -8,6 +8,7 @@
 
 #import "ZMAuthVC.h"
 #import <ZMCert/ZMCert.h>
+#import "ZMAuthResultVC.h"
 
 @interface ZMAuthVC ()
 
@@ -24,7 +25,7 @@
     
     [self initSubviews];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(realNameAuth) name:@"realNameSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(realNameAuth:) name:@"RealNameAuthResult" object:nil];
 
 }
 
@@ -58,13 +59,19 @@
 
 #pragma mark - Notification
 
-- (void)realNameAuth {
+- (void)realNameAuth:(NSNotification *)notification {
 
-    [TLAlert alertWithSucces:@"实名认证成功"];
-
-    [TLUser user].idNo = self.idCard.text;
+    ZMAuthResultVC *authResultVC = [ZMAuthResultVC new];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    authResultVC.title = @"芝麻认证结果";
+    
+    authResultVC.result = [notification.object isEqualToString:@"1"] ? YES: NO;
+    
+    authResultVC.realName = self.realName.text;
+    
+    authResultVC.idCard = self.idCard.text;
+    
+    [self.navigationController pushViewController:authResultVC animated:YES];
 
 }
 
@@ -76,8 +83,6 @@
 }
 
 - (void)confirmIDCard:(UIButton *)sender {
-    
-    BaseWeakSelf;
     
     if (![self.realName.text valid]) {
         
@@ -94,8 +99,12 @@
     if (self.idCard.text.length != 18) {
         
         [TLAlert alertWithInfo:@"请输入18位身份证号码"];
+        return;
     }
     
+    [self.view endEditing:YES];
+    
+    //芝麻认证
     TLNetworking *http = [TLNetworking new];
     
     http.code = @"798013";
@@ -109,34 +118,19 @@
     
     [http postWithSuccess:^(id responseObject) {
         
-        NSString *bizNo = responseObject[@"data"][@"bizNo"];
-
-        [TLUser user].tempBizNo = bizNo;
+        if ([responseObject[@"errorCode"] isEqual:@"0"]) {
         
-        [self doVerify:responseObject[@"data"][@"url"]];
-
-//        NSString *merchantId = responseObject[@"data"][@"merchantId"];
-//        
-//        ZMCertification *manager = [[ZMCertification alloc] init];
-//
-//        [manager startWithBizNO:bizNo merchantID:merchantId extParams:nil viewController:self onFinish:^(BOOL isCanceled, BOOL isPassed, ZMStatusErrorType errorCode) {
-//            
-//            if (isCanceled) {
-//                
-//                [TLAlert alertWithError:@"用户取消了认证"];
-//
-//            }else{
-//                if (isPassed) {
-//                    
-//                    [TLAlert alertWithSucces:@"认证成功"];
-//                    
-//                }else{
-//                    
-//                    [TLAlert alertWithError:[NSString stringWithFormat:@"认证失败了 %zi", errorCode]];
-//                    
-//                }
-//            }
-//        }];
+            NSString *bizNo = responseObject[@"data"][@"bizNo"];
+            
+            [TLUser user].tempBizNo = bizNo;
+            
+            [self doVerify:responseObject[@"data"][@"url"]];
+            
+        } else {
+        
+            [TLAlert alertWithError:responseObject[@"errorInfo"]];
+        }
+        
         
     } failure:^(NSError *error) {
         
@@ -171,6 +165,7 @@
 - (NSString *)URLEncodedStringWithUrl:(NSString *)url {
     
     NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)url,NULL,(CFStringRef) @"!'();:@&=+$,%#[]|",kCFStringEncodingUTF8));
+    
     return encodedString;
 }
 

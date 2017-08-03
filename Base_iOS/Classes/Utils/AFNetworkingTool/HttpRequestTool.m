@@ -159,7 +159,7 @@
         if ([responseObj[@"errorCode"] isEqual:@"4"]) {
             //token错误  4
             
-            [self showTextOnly:@"为了您的账户安全，请重新登录"];
+//            [self showTextOnly:@"为了您的账户安全，请重新登录"];
 //            [[NSNotificationCenter defaultCenter] postNotificationName:kUserLoginOutNotification object:nil];
 
             return;

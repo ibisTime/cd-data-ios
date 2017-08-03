@@ -12,6 +12,10 @@
 #import "TLWXManager.h"
 #import "TLAlipayManager.h"
 #import "WXApi.h"
+
+#import <PgyUpdate/PgyUpdateManager.h>
+#import <PgySDk/PgyManager.h>
+
 #import <ZMCreditSDK/ALCreditService.h>
 
 #import "AppDelegate+Launch.h"
@@ -19,7 +23,6 @@
 #import "NavigationController.h"
 #import "TabbarViewController.h"
 #import "DataVC.h"
-#import "TLUserLoginVC.h"
 
 @interface AppDelegate ()
 
@@ -38,14 +41,14 @@
     //键盘
     [self configIQKeyboard];
     
-    //配置地图
-//    [self configMapKit];
-    
-    //配置极光
-//    [self configJPushWithOptions:launchOptions];
+    // 配置蒲公英
+    [self configPgy];
     
     //配置芝麻信用
     [self configZMOP];
+    
+    //配置魔蝎
+    [self configMoXie];
     
     //配置根控制器
     [self configRootViewController];
@@ -83,57 +86,23 @@
     
     if ([url.host isEqualToString:@"certi.back"]) {
         
-        NSString *str =  [url query];
-        NSArray <NSString *>*arr =  [str componentsSeparatedByString:@"&"];
+        //查询是否认证成功
+        TLNetworking *http = [TLNetworking new];
+        http.showView = [UIApplication sharedApplication].keyWindow;
+        http.code = @"798014";
+        http.parameters[@"bizNo"] = [TLUser user].tempBizNo;
         
-        __block NSString *bizNoStr;
-        __block NSDictionary *dict;
-        [arr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [http postWithSuccess:^(id responseObject) {
             
-            if ([obj hasPrefix:@"biz_content="]) {
-                
-                bizNoStr = [obj substringWithRange:NSMakeRange(12, obj.length - 12)];
-                
-                dict = [NSJSONSerialization JSONObjectWithData:[bizNoStr.stringByRemovingPercentEncoding dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-                
-            }
+            NSString *str = [NSString stringWithFormat:@"%@", responseObject[@"data"][@"isSuccess"]];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RealNameAuthResult" object:str];
+            
+            
+        } failure:^(NSError *error) {
+            
             
         }];
-        
-        
-        //--//
-        if (!dict[@"failed_reason"]) {
-            
-            //通知我们的服务器认证成功
-            TLNetworking *http = [TLNetworking new];
-            http.showView = [UIApplication sharedApplication].keyWindow;
-            http.code = @"798014";
-            //      http.parameters[@"userId"] = [TLUser user].userId;
-            http.parameters[@"bizNo"] = [TLUser user].tempBizNo;
-            
-            [http postWithSuccess:^(id responseObject) {
-                
-                NSString *str = [NSString stringWithFormat:@"%@", responseObject[@"data"][@"isSuccess"]];
-                
-                if ([str isEqualToString:@"1"]) {
-                    
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"realNameSuccess" object:nil];
-
-                } else {
-                
-                    [TLAlert alertWithError:@"实名认证失败"];
-                }
-                
-                
-            } failure:^(NSError *error) {
-                
-                
-            }];
-            
-        } else {
-            
-            
-        }
         
         
         return YES;
@@ -158,48 +127,31 @@
     
     if ([url.host isEqualToString:@"certi.back"]) {
         
-        NSString *str =  [url query];
-        NSArray <NSString *>*arr =  [str componentsSeparatedByString:@"&"];
+        //查询是否认证成功
+        TLNetworking *http = [TLNetworking new];
+        http.showView = [UIApplication sharedApplication].keyWindow;
+        http.code = @"798014";
+        http.parameters[@"bizNo"] = [TLUser user].tempBizNo;
         
-        __block NSString *bizNoStr;
-        __block NSDictionary *dict;
-        [arr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [http postWithSuccess:^(id responseObject) {
             
-            if ([obj hasPrefix:@"biz_content="]) {
-                
-                bizNoStr = [obj substringWithRange:NSMakeRange(12, obj.length - 12)];
-                
-                dict = [NSJSONSerialization JSONObjectWithData:[bizNoStr.stringByRemovingPercentEncoding dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-                
-            }
+            NSString *str = [NSString stringWithFormat:@"%@", responseObject[@"data"][@"isSuccess"]];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RealNameAuthResult" object:str];
+
+//            if ([str isEqualToString:@"1"]) {
+//                
+//                
+//            } else {
+//                
+//                [TLAlert alertWithError:@"实名认证失败"];
+//            }
+            
+            
+        } failure:^(NSError *error) {
+            
             
         }];
-        
-        
-        //--//
-        if (!dict[@"failed_reason"]) {
-            
-            //通知我们的服务器认证成功
-            TLNetworking *http = [TLNetworking new];
-            http.showView = [UIApplication sharedApplication].keyWindow;
-            http.code = @"798014";
-//            http.parameters[@"userId"] = [TLUser user].userId;
-            http.parameters[@"bizNo"] = [TLUser user].tempBizNo;
-            
-            [http postWithSuccess:^(id responseObject) {
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"realNameSuccess" object:nil];
-                
-            } failure:^(NSError *error) {
-                
-                
-            }];
-            
-        } else {
-        
-            
-        }
-        
         
         return YES;
     }
@@ -224,9 +176,26 @@
     
 }
 
+//配置蒲公英
+- (void)configPgy {
+    
+    // 关闭用户反馈
+    [[PgyManager sharedPgyManager] setEnableFeedback:NO];
+    [[PgyManager sharedPgyManager] startManagerWithAppId:kPgyerAppKey];
+    
+    // 检查更新
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:kPgyerAppKey];
+    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+}
+
 - (void)configZMOP {
 
     [[ALCreditService sharedService] resgisterApp];
+}
+
+- (void)configMoXie {
+
+    
 }
 
 - (void)configIQKeyboard {
@@ -257,21 +226,17 @@
         TabbarViewController *tabbarCtrl = [[TabbarViewController alloc] init];
         self.window.rootViewController = tabbarCtrl;
         
-        //取出用户信息
-        if([TLUser user].isLogin) {
-            
-            [[TLUser user] initUserData];
-            
-            //异步跟新用户信息
-            [[TLUser user] updateUserInfo];
-            
-        };
+        [[TLUser user] initUserData];
+        
+        //异步跟新用户信息
+//        [[TLUser user] updateUserInfo];
+
         
         //登入
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLogin) name:kUserLoginNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLogin) name:kUserLoginNotification object:nil];
         
         //用户登出
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoginOut) name:kUserLoginOutNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoginOut) name:kUserLoginOutNotification object:nil];
     }];
 }
 
@@ -282,13 +247,13 @@
     self.window.rootViewController = [[NavigationController alloc] initWithRootViewController:[[DataVC alloc] init]];
 }
 
-- (void)userLoginOut {
-    
-    [[TLUser user] loginOut];
-    
-    self.window.rootViewController = [[NavigationController alloc] initWithRootViewController:[[TLUserLoginVC alloc] init]];
-    
-}
+//- (void)userLoginOut {
+//    
+//    [[TLUser user] loginOut];
+//    
+//    self.window.rootViewController = [[NavigationController alloc] initWithRootViewController:[[TLUserLoginVC alloc] init]];
+//    
+//}
 
 #pragma mark 微信支付结果
 - (void)onResp:(BaseResp *)resp {

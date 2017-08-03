@@ -10,11 +10,15 @@
 #import <ZMCreditSDK/ALCreditService.h>
 #import "ZMFoucsModel.h"
 
+#import "ZMFoucsResultVC.h"
+
 @interface ZMFoucsNameVC ()
 
 @property (nonatomic, strong) TLTextField *realName;    //真实姓名
 
 @property (nonatomic, strong) TLTextField *idCard;      //身份证
+
+@property (nonatomic, assign) BOOL isAuthorized;        //授权
 
 @end
 
@@ -38,9 +42,13 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     
-    self.navigationController.navigationBar.translucent = YES;
+    if (!_isAuthorized) {
+        
+        self.navigationController.navigationBar.translucent = YES;
+        
+        [self.navigationController.navigationBar setBackgroundImage:[UIColor createImageWithColor:kBlackColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    }
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIColor createImageWithColor:kBlackColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     
 }
 
@@ -90,9 +98,15 @@
     if (self.idCard.text.length != 18) {
         
         [TLAlert alertWithInfo:@"请输入18位身份证号码"];
+        return;
     }
     
+    [self.view endEditing:YES];
+
     TLNetworking *http = [TLNetworking new];
+    
+    http.isShowMsg = NO;
+    http.showView = self.view;
     
     http.code = @"798016";
     http.parameters[@"idNo"] = self.idCard.text;
@@ -100,38 +114,56 @@
     
     [http postWithSuccess:^(id responseObject) {
         
-        ZMFoucsModel *foucsModel = [ZMFoucsModel mj_objectWithKeyValues:responseObject[@"data"]];
+        ZMFoucsResultVC *resultVC = [ZMFoucsResultVC new];
         
-        if (foucsModel.authorized) {
+        resultVC.title = @"行业关注清单结果";
+        
+        if ([responseObject[@"errorCode"] isEqual:@"0"]) {
             
-            if (foucsModel.isMatched) {
+            ZMFoucsModel *foucsModel = [ZMFoucsModel mj_objectWithKeyValues:responseObject[@"data"]];
+
+            //是否授权
+            if (foucsModel.authorized) {
                 
-                [TLAlert alertWithSucces:@"您在行业关注名单中"];
+                _isAuthorized = YES;
+                
+                resultVC.result = YES;
+                
+                resultVC.foucsModel = foucsModel;
                 
             } else {
-            
-                [TLAlert alertWithSucces:@"您不在行业关注名单中"];
+                
+                _isAuthorized = NO;
+                
+                NSString *appId = foucsModel.appId;
+                
+                NSString *sign = foucsModel.signature;
+                
+                NSString *params = foucsModel.param;
+                
+                if (appId && sign && params) {
+                    
+                    [[ALCreditService sharedService] queryUserAuthReq:appId sign:sign params:params extParams:nil selector:@selector(result:) target:self];
+                    
+                } else {
+                    
+                    [TLAlert alertWithInfo:@"appId或sign或param为空"];
+                }
+                
+                return ;
 
             }
             
         } else {
             
-            NSString *appId = foucsModel.appId;
+            _isAuthorized = YES;
             
-            NSString *sign = foucsModel.signature;
+            resultVC.result = NO;
             
-            NSString *params = foucsModel.param;
-            
-            if (appId && sign && params) {
-                
-                [[ALCreditService sharedService] queryUserAuthReq:appId sign:sign params:params extParams:nil selector:@selector(result:) target:self];
-
-            } else {
-            
-                [TLAlert alertWithInfo:@"appId或sign或param为空"];
-            }
-            
+            resultVC.failureReason = responseObject[@"errorInfo"];
         }
+        
+        [self.navigationController pushViewController:resultVC animated:YES];
         
     } failure:^(NSError *error) {
         
@@ -146,23 +178,36 @@
         
         TLNetworking *http = [TLNetworking new];
         
+        http.isShowMsg = NO;
+
         http.code = @"798016";
-        
         http.parameters[@"idNo"] = self.idCard.text;
         http.parameters[@"realName"] = self.realName.text;
         
         [http postWithSuccess:^(id responseObject) {
             
+            _isAuthorized = YES;
+
             ZMFoucsModel *foucsModel = [ZMFoucsModel mj_objectWithKeyValues:responseObject[@"data"]];
             
-            if (foucsModel.isMatched) {
+            ZMFoucsResultVC *resultVC = [ZMFoucsResultVC new];
+            
+            resultVC.title = @"行业关注清单结果";
+            
+            if ([responseObject[@"errorCode"] isEqual:@"0"]) {
                 
-                [TLAlert alertWithSucces:@"您已加入行业关注名单"];
+                resultVC.result = YES;
+                
+                resultVC.foucsModel = foucsModel;
                 
             } else {
-            
-                [TLAlert alertWithInfo:@"您还未加入行业关注名单"];
+                
+                resultVC.result = NO;
+                
+                resultVC.failureReason = responseObject[@"errorInfo"];
             }
+            
+            [self.navigationController pushViewController:resultVC animated:YES];
             
         } failure:^(NSError *error) {
             

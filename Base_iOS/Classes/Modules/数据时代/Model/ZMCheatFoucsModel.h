@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) NSArray<NSString *> *riskCodeList;
 
+@property (nonatomic, strong) NSArray<NSString *> *riskInofList;
+
 @end

@@ -20,6 +20,4 @@
 - (void)removePlaceholderView; //移除
 - (void)addPlaceholderView; // 添加
 
-- (void)showReLoginVC;
-
 @end

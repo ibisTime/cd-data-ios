@@ -433,7 +433,27 @@
     
     NSString *wifiMacAddress = [dic objectForKey:@"BSSID"];
     
-    return wifiMacAddress;
+    NSArray *mac = [wifiMacAddress componentsSeparatedByString:@":"];
+    
+    NSMutableString *wifiAddress = [NSMutableString string];
+    
+    
+    for (int i = 0 ; i < mac.count; i++) {
+        
+        NSString *sub = mac[i];
+        
+        if (sub.length == 1) {
+            
+            [wifiAddress appendString:[NSString stringWithFormat:@"0%@", sub]];
+            
+        } else {
+            
+            [wifiAddress appendString:sub];
+            
+        }
+    }
+    
+    return wifiAddress;
 }
 
 #pragma mark - 获取设备当前网络IP地址

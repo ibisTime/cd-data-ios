@@ -57,6 +57,9 @@ FOUNDATION_EXTERN  NSString *const kUserInfoChange;
 @property (nonatomic, copy) NSString *tempIdNo;
 
 
+//魔蝎
+@property (nonatomic, copy) NSString *message;
+
 //是否为需要登录，如果已登录，取出用户信息
 - (BOOL)isLogin;
 

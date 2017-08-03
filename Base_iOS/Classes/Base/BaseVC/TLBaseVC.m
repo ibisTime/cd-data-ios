@@ -7,7 +7,7 @@
 //
 
 #import "TLBaseVC.h"
-#import "TLUserLoginVC.h"
+//#import "TLUserLoginVC.h"
 #import "NavigationController.h"
 
 @interface TLBaseVC ()
@@ -125,14 +125,6 @@
         _tl_placeholderView = view;
     }
     return _tl_placeholderView;
-    
-}
-
-- (void)showReLoginVC {
-    
-    TLUserLoginVC *loginVC = [[TLUserLoginVC alloc] init];
-    NavigationController *nav = [[NavigationController alloc] initWithRootViewController:loginVC];
-    [self presentViewController:nav animated:YES completion:nil];
     
 }
 

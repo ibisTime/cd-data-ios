@@ -18,10 +18,12 @@
 #import "ZMCheatScoreVC.h"
 #import "ZMCheatAuthVC.h"
 #import "ZMCheatFoucsNameVC.h"
+#import "MXOperatorAuthVC.h"
 
 #import <ZMCreditSDK/ALCreditService.h>
+#import "MoxieSDK.h"
 
-@interface DataVC ()
+@interface DataVC ()<MoxieSDKDelegate>
 
 @property (nonatomic, strong) DataView *dataView;
 
@@ -35,7 +37,11 @@
     self.title = @"数据时代";
     
     [self initDataView];
+    
+    [self initMXSDK];
 }
+
+#pragma mark - Init
 
 - (void)initDataView {
 
@@ -55,10 +61,27 @@
     self.bgSV.contentSize = CGSizeMake(kScreenWidth, self.dataView.yy);
 }
 
-- (void)dataWithSection:(SectionModel *)section {
+- (void)initMXSDK {
 
+    [MoxieSDK shared].delegate = self;
+    [MoxieSDK shared].mxUserId = kMoXieUserID;
+    [MoxieSDK shared].mxApiKey = kMoXieApiKey;
+    [MoxieSDK shared].fromController = self;
+//    [MoxieSDK shared].cacheDisable = YES;
+    
+    [MoxieSDK shared].backImageName = @"返回";
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+
+}
+
+- (void)dataWithSection:(SectionModel *)section {
     
     switch (section.type) {
+            
         case DataTypeZMRZ:
         {
             ZMAuthVC *zmAuthVC = [ZMAuthVC new];
@@ -126,6 +149,24 @@
         case DataTypeYYSRZ:
         {
         
+//            if (![TLUser user].message) {
+//                
+//                [MoxieSDK shared].taskType = @"carrier";
+//                
+//                [[MoxieSDK shared] startFunction];
+//                
+//            } else {
+//            
+//                MXOperatorAuthVC *operatorAuthVC = [MXOperatorAuthVC new];
+//                
+//                operatorAuthVC.title = @"详情报告";
+//                
+//                [self.navigationController pushViewController:operatorAuthVC animated:YES];
+//            }
+            [MoxieSDK shared].taskType = @"carrier";
+
+            [[MoxieSDK shared] startFunction];
+            
         }break;
             
         case DataTypeEYSSMRZ:
@@ -162,6 +203,65 @@
         self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     }
     
+}
+
+#pragma mark - MoxieSDKDelegate
+
+-(void)receiveMoxieSDKResult:(NSDictionary*)resultDictionary {
+    
+    int code = [resultDictionary[@"code"] intValue];
+    NSString *taskType = resultDictionary[@"taskType"];
+    NSString *taskId = resultDictionary[@"taskId"];
+    NSString *searchId = resultDictionary[@"searchId"];
+    NSString *message = resultDictionary[@"message"];
+    NSString *account = resultDictionary[@"account"];
+    NSLog(@"get import result---code:%d,taskType:%@,taskId:%@,searchId:%@,message:%@,account:%@",code,taskType,taskId,searchId,message,account);
+    
+    [TLUser user].message = message;
+    
+    NSDictionary *userInfo = @{@"message": message};
+    
+    [[TLUser user] saveUserInfo:userInfo];
+
+    if(code == 2) {
+        //继续查询该任务进展
+        
+        [TLAlert alertWithInfo:@"继续查询该任务进展"];
+        
+    } else if(code == 1) {
+        //code是1则成功
+        [TLAlert alertWithSucces:@"查询成功"];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+        
+    } else if(code == -1) {
+        //用户没有做任何操作
+        
+//        [TLAlert alertWithInfo:@"用户没有做任何操作"];
+        
+    } else if(code == -2) {
+        //用户没有做任何操作
+        
+        [TLAlert alertWithInfo:@"平台方服务问题"];
+        
+    } else if(code == -3) {
+        //用户没有做任何操作
+        
+        [TLAlert alertWithInfo:@"魔蝎数据服务异常"];
+        
+    }else if(code == -4) {
+        //用户没有做任何操作
+        
+        [TLAlert alertWithInfo:@"用户输入出错"];
+        
+    }else {
+        
+        //该任务失败按失败处理
+        [TLAlert alertWithError:@"查询失败"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

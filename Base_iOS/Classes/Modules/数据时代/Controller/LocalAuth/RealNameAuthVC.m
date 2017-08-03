@@ -7,6 +7,7 @@
 //
 
 #import "RealNameAuthVC.h"
+#import "RealNameAuthResultVC.h"
 
 @interface RealNameAuthVC ()
 
@@ -56,6 +57,7 @@
 #pragma mark - Events
 - (void)confirmIDCard:(UIButton *)sender {
 
+    
     if (![self.realName.text valid]) {
         
         [TLAlert alertWithInfo:@"请输入姓名"];
@@ -71,10 +73,17 @@
     if (self.idCard.text.length != 18) {
         
         [TLAlert alertWithInfo:@"请输入18位身份证号码"];
+        return;
+
     }
+    
+    [self.view endEditing:YES];
     
     TLNetworking *http = [TLNetworking new];
     
+    http.isShowMsg = NO;
+    http.showView = self.view;
+
     http.code = @"798001";
     http.parameters[@"idKind"] = @"1";
     http.parameters[@"idNo"] = self.idCard.text;
@@ -84,9 +93,23 @@
     
     [http postWithSuccess:^(id responseObject) {
         
-        [TLAlert alertWithSucces:@"二要素实名认证成功"];
+        RealNameAuthResultVC *resultVC = [RealNameAuthResultVC new];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        resultVC.title = @"二要素认证结果";
+        
+        if ([responseObject[@"errorCode"] isEqual:@"0"]) {
+            
+            resultVC.result = YES;
+            
+        } else {
+            
+            resultVC.result = NO;
+            
+            resultVC.failureReason = responseObject[@"errorInfo"];
+            
+        }
+        
+        [self.navigationController pushViewController:resultVC animated:YES];
         
     } failure:^(NSError *error) {
         

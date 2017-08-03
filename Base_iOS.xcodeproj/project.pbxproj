@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21158E431F1C4F4D00A07266 /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21158E421F1C4F4D00A07266 /* CustomTabBar.m */; };
+		210EBFF91F31B269007E5395 /* ZMAuthResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFEE1F31B269007E5395 /* ZMAuthResultVC.m */; };
+		210EBFFA1F31B269007E5395 /* ZMCheatAuthResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFF01F31B269007E5395 /* ZMCheatAuthResultVC.m */; };
+		210EBFFB1F31B269007E5395 /* ZMCheatFoucsResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFF21F31B269007E5395 /* ZMCheatFoucsResultVC.m */; };
+		210EBFFC1F31B269007E5395 /* ZMCheatScoreResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFF41F31B269007E5395 /* ZMCheatScoreResultVC.m */; };
+		210EBFFD1F31B269007E5395 /* ZMFoucsResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFF61F31B269007E5395 /* ZMFoucsResultVC.m */; };
+		210EBFFE1F31B269007E5395 /* ZMOPScoreResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EBFF81F31B269007E5395 /* ZMOPScoreResultVC.m */; };
+		210EC0021F31B2AD007E5395 /* RealNameAuthResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EC0011F31B2AD007E5395 /* RealNameAuthResultVC.m */; };
+		210EC0051F31B2C5007E5395 /* BankCardAuthResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210EC0041F31B2C5007E5395 /* BankCardAuthResultVC.m */; };
+		21155D1D1F2B13940004F189 /* MXOperatorAuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21155D1C1F2B13940004F189 /* MXOperatorAuthVC.m */; };
 		21158E461F1C4F9E00A07266 /* TabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21158E451F1C4F9E00A07266 /* TabBarModel.m */; };
-		21158E491F1C502400A07266 /* BarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21158E481F1C502400A07266 /* BarButton.m */; };
+		21176ED91F32CEC400C5217A /* BarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176ED41F32CEC400C5217A /* BarButton.m */; };
+		21176EDA1F32CEC400C5217A /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176ED61F32CEC400C5217A /* CustomTabBar.m */; };
+		21176EDB1F32CEC400C5217A /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176ED81F32CEC400C5217A /* TabBarItem.m */; };
+		21176EE11F32CEFC00C5217A /* AccountTf.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176EDE1F32CEFC00C5217A /* AccountTf.m */; };
+		21176EE21F32CEFC00C5217A /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176EE01F32CEFC00C5217A /* CaptchaView.m */; };
+		21176EE71F32CF4000C5217A /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176EE41F32CF4000C5217A /* TLUser.m */; };
+		21176EE81F32CF4000C5217A /* TLUserExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 21176EE61F32CF4000C5217A /* TLUserExt.m */; };
 		211E48F51F2842D700020DD2 /* MineGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 211E48F41F2842D700020DD2 /* MineGroup.m */; };
 		211E48F81F2842EF00020DD2 /* MineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 211E48F71F2842EF00020DD2 /* MineModel.m */; };
 		211E48FB1F28443900020DD2 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211E48FA1F28443900020DD2 /* MineCell.m */; };
@@ -103,23 +117,6 @@
 		21F82D981F1772BA0019B176 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F82D731F1772BA0019B176 /* UMSocialNetwork.framework */; };
 		21F82D991F1772BA0019B176 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21F82D751F1772BA0019B176 /* UMSocialSDKResources.bundle */; };
 		21F82D9A1F1772BA0019B176 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F82D761F1772BA0019B176 /* UShareUI.framework */; };
-		21FB2F6A1F26E4440028ADEE /* ZHAddAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F401F26E4440028ADEE /* ZHAddAddressVC.m */; };
-		21FB2F6B1F26E4440028ADEE /* ZHAddressChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F421F26E4440028ADEE /* ZHAddressChooseVC.m */; };
-		21FB2F6C1F26E4440028ADEE /* ZHReceivingAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F441F26E4440028ADEE /* ZHReceivingAddress.m */; };
-		21FB2F6D1F26E4440028ADEE /* TLAccountBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F471F26E4440028ADEE /* TLAccountBaseVC.m */; };
-		21FB2F701F26E4440028ADEE /* BindMobileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F4F1F26E4440028ADEE /* BindMobileVC.m */; };
-		21FB2F711F26E4440028ADEE /* TLAccountSetBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F511F26E4440028ADEE /* TLAccountSetBaseVC.m */; };
-		21FB2F721F26E4440028ADEE /* TLChangeMobileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F531F26E4440028ADEE /* TLChangeMobileVC.m */; };
-		21FB2F731F26E4440028ADEE /* TLPwdRelatedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F551F26E4440028ADEE /* TLPwdRelatedVC.m */; };
-		21FB2F741F26E4440028ADEE /* ZHChangeNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F571F26E4440028ADEE /* ZHChangeNickNameVC.m */; };
-		21FB2F751F26E4440028ADEE /* TLBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F5A1F26E4440028ADEE /* TLBaseModel.m */; };
-		21FB2F761F26E4440028ADEE /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F5C1F26E4440028ADEE /* TLUser.m */; };
-		21FB2F771F26E4440028ADEE /* TLUserExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F5E1F26E4440028ADEE /* TLUserExt.m */; };
-		21FB2F781F26E4440028ADEE /* UserAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F601F26E4440028ADEE /* UserAddress.m */; };
-		21FB2F791F26E4440028ADEE /* AccountTf.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F631F26E4440028ADEE /* AccountTf.m */; };
-		21FB2F7A1F26E4440028ADEE /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F651F26E4440028ADEE /* CaptchaView.m */; };
-		21FB2F7B1F26E4440028ADEE /* ZHAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F671F26E4440028ADEE /* ZHAddressCell.m */; };
-		21FB2F7C1F26E4440028ADEE /* ZHAddressChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F691F26E4440028ADEE /* ZHAddressChooseView.m */; };
 		21FB306C1F26E9EF0028ADEE /* address.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21FB2F7F1F26E9EE0028ADEE /* address.txt */; };
 		21FB306D1F26E9EF0028ADEE /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F811F26E9EE0028ADEE /* AddressPickerView.m */; };
 		21FB306E1F26E9EF0028ADEE /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB2F831F26E9EE0028ADEE /* City.m */; };
@@ -220,9 +217,6 @@
 		21FB30CD1F26E9EF0028ADEE /* TLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30671F26E9EF0028ADEE /* TLNetworking.m */; };
 		21FB30CE1F26E9EF0028ADEE /* TLPageDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30691F26E9EF0028ADEE /* TLPageDataHelper.m */; };
 		21FB30CF1F26E9EF0028ADEE /* TLUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB306B1F26E9EF0028ADEE /* TLUploadManager.m */; };
-		21FB30D61F26EBB50028ADEE /* TLUserForgetPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30D11F26EBB50028ADEE /* TLUserForgetPwdVC.m */; };
-		21FB30D71F26EBB50028ADEE /* TLUserLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30D31F26EBB50028ADEE /* TLUserLoginVC.m */; };
-		21FB30D81F26EBB50028ADEE /* TLUserRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30D51F26EBB50028ADEE /* TLUserRegisterVC.m */; };
 		21FB30EB1F2710EE0028ADEE /* libMoxieSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FB30E51F2710EE0028ADEE /* libMoxieSDK.a */; };
 		21FB30EC1F2710EE0028ADEE /* mx_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21FB30E71F2710EE0028ADEE /* mx_back@2x.png */; };
 		21FB30ED1F2710EE0028ADEE /* mx_finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21FB30E81F2710EE0028ADEE /* mx_finish@2x.png */; };
@@ -232,18 +226,45 @@
 		21FB30F81F2714110028ADEE /* MineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30F71F2714110028ADEE /* MineTableView.m */; };
 		21FB30FB1F2722D60028ADEE /* DataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30FA1F2722D60028ADEE /* DataView.m */; };
 		21FB30FE1F2725520028ADEE /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB30FD1F2725520028ADEE /* DataModel.m */; };
-		21FB31011F2737730028ADEE /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB31001F2737730028ADEE /* TabBarItem.m */; };
 		297C531BBC795ED661A638F6 /* libPods-Base_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E041B8AEBBDCC121169B52FB /* libPods-Base_iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D92F7998FE0FF842471AF8F /* Pods-Base_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Base_iOS/Pods-Base_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		21158E411F1C4F4D00A07266 /* CustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
-		21158E421F1C4F4D00A07266 /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
+		210EBFED1F31B269007E5395 /* ZMAuthResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAuthResultVC.h; sourceTree = "<group>"; };
+		210EBFEE1F31B269007E5395 /* ZMAuthResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAuthResultVC.m; sourceTree = "<group>"; };
+		210EBFEF1F31B269007E5395 /* ZMCheatAuthResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCheatAuthResultVC.h; sourceTree = "<group>"; };
+		210EBFF01F31B269007E5395 /* ZMCheatAuthResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCheatAuthResultVC.m; sourceTree = "<group>"; };
+		210EBFF11F31B269007E5395 /* ZMCheatFoucsResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCheatFoucsResultVC.h; sourceTree = "<group>"; };
+		210EBFF21F31B269007E5395 /* ZMCheatFoucsResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCheatFoucsResultVC.m; sourceTree = "<group>"; };
+		210EBFF31F31B269007E5395 /* ZMCheatScoreResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCheatScoreResultVC.h; sourceTree = "<group>"; };
+		210EBFF41F31B269007E5395 /* ZMCheatScoreResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCheatScoreResultVC.m; sourceTree = "<group>"; };
+		210EBFF51F31B269007E5395 /* ZMFoucsResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMFoucsResultVC.h; sourceTree = "<group>"; };
+		210EBFF61F31B269007E5395 /* ZMFoucsResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMFoucsResultVC.m; sourceTree = "<group>"; };
+		210EBFF71F31B269007E5395 /* ZMOPScoreResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMOPScoreResultVC.h; sourceTree = "<group>"; };
+		210EBFF81F31B269007E5395 /* ZMOPScoreResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMOPScoreResultVC.m; sourceTree = "<group>"; };
+		210EC0001F31B2AD007E5395 /* RealNameAuthResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealNameAuthResultVC.h; sourceTree = "<group>"; };
+		210EC0011F31B2AD007E5395 /* RealNameAuthResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealNameAuthResultVC.m; sourceTree = "<group>"; };
+		210EC0031F31B2C5007E5395 /* BankCardAuthResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardAuthResultVC.h; sourceTree = "<group>"; };
+		210EC0041F31B2C5007E5395 /* BankCardAuthResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardAuthResultVC.m; sourceTree = "<group>"; };
+		21155D1B1F2B13940004F189 /* MXOperatorAuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXOperatorAuthVC.h; sourceTree = "<group>"; };
+		21155D1C1F2B13940004F189 /* MXOperatorAuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXOperatorAuthVC.m; sourceTree = "<group>"; };
 		21158E441F1C4F9E00A07266 /* TabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarModel.h; sourceTree = "<group>"; };
 		21158E451F1C4F9E00A07266 /* TabBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarModel.m; sourceTree = "<group>"; };
-		21158E471F1C502400A07266 /* BarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarButton.h; sourceTree = "<group>"; };
-		21158E481F1C502400A07266 /* BarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButton.m; sourceTree = "<group>"; };
+		21176ED31F32CEC400C5217A /* BarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarButton.h; sourceTree = "<group>"; };
+		21176ED41F32CEC400C5217A /* BarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarButton.m; sourceTree = "<group>"; };
+		21176ED51F32CEC400C5217A /* CustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
+		21176ED61F32CEC400C5217A /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
+		21176ED71F32CEC400C5217A /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
+		21176ED81F32CEC400C5217A /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
+		21176EDD1F32CEFC00C5217A /* AccountTf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTf.h; sourceTree = "<group>"; };
+		21176EDE1F32CEFC00C5217A /* AccountTf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTf.m; sourceTree = "<group>"; };
+		21176EDF1F32CEFC00C5217A /* CaptchaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
+		21176EE01F32CEFC00C5217A /* CaptchaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaView.m; sourceTree = "<group>"; };
+		21176EE31F32CF4000C5217A /* TLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUser.h; sourceTree = "<group>"; };
+		21176EE41F32CF4000C5217A /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
+		21176EE51F32CF4000C5217A /* TLUserExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserExt.h; sourceTree = "<group>"; };
+		21176EE61F32CF4000C5217A /* TLUserExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserExt.m; sourceTree = "<group>"; };
 		211E48F31F2842D700020DD2 /* MineGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineGroup.h; sourceTree = "<group>"; };
 		211E48F41F2842D700020DD2 /* MineGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineGroup.m; sourceTree = "<group>"; };
 		211E48F61F2842EF00020DD2 /* MineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineModel.h; sourceTree = "<group>"; };
@@ -403,40 +424,6 @@
 		21F82D731F1772BA0019B176 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
 		21F82D751F1772BA0019B176 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		21F82D761F1772BA0019B176 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
-		21FB2F3F1F26E4440028ADEE /* ZHAddAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAddAddressVC.h; sourceTree = "<group>"; };
-		21FB2F401F26E4440028ADEE /* ZHAddAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAddAddressVC.m; sourceTree = "<group>"; };
-		21FB2F411F26E4440028ADEE /* ZHAddressChooseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAddressChooseVC.h; sourceTree = "<group>"; };
-		21FB2F421F26E4440028ADEE /* ZHAddressChooseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAddressChooseVC.m; sourceTree = "<group>"; };
-		21FB2F431F26E4440028ADEE /* ZHReceivingAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHReceivingAddress.h; sourceTree = "<group>"; };
-		21FB2F441F26E4440028ADEE /* ZHReceivingAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHReceivingAddress.m; sourceTree = "<group>"; };
-		21FB2F461F26E4440028ADEE /* TLAccountBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAccountBaseVC.h; sourceTree = "<group>"; };
-		21FB2F471F26E4440028ADEE /* TLAccountBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAccountBaseVC.m; sourceTree = "<group>"; };
-		21FB2F4E1F26E4440028ADEE /* BindMobileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindMobileVC.h; sourceTree = "<group>"; };
-		21FB2F4F1F26E4440028ADEE /* BindMobileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindMobileVC.m; sourceTree = "<group>"; };
-		21FB2F501F26E4440028ADEE /* TLAccountSetBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAccountSetBaseVC.h; sourceTree = "<group>"; };
-		21FB2F511F26E4440028ADEE /* TLAccountSetBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAccountSetBaseVC.m; sourceTree = "<group>"; };
-		21FB2F521F26E4440028ADEE /* TLChangeMobileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLChangeMobileVC.h; sourceTree = "<group>"; };
-		21FB2F531F26E4440028ADEE /* TLChangeMobileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLChangeMobileVC.m; sourceTree = "<group>"; };
-		21FB2F541F26E4440028ADEE /* TLPwdRelatedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPwdRelatedVC.h; sourceTree = "<group>"; };
-		21FB2F551F26E4440028ADEE /* TLPwdRelatedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPwdRelatedVC.m; sourceTree = "<group>"; };
-		21FB2F561F26E4440028ADEE /* ZHChangeNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHChangeNickNameVC.h; sourceTree = "<group>"; };
-		21FB2F571F26E4440028ADEE /* ZHChangeNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHChangeNickNameVC.m; sourceTree = "<group>"; };
-		21FB2F591F26E4440028ADEE /* TLBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBaseModel.h; sourceTree = "<group>"; };
-		21FB2F5A1F26E4440028ADEE /* TLBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBaseModel.m; sourceTree = "<group>"; };
-		21FB2F5B1F26E4440028ADEE /* TLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUser.h; sourceTree = "<group>"; };
-		21FB2F5C1F26E4440028ADEE /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
-		21FB2F5D1F26E4440028ADEE /* TLUserExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserExt.h; sourceTree = "<group>"; };
-		21FB2F5E1F26E4440028ADEE /* TLUserExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserExt.m; sourceTree = "<group>"; };
-		21FB2F5F1F26E4440028ADEE /* UserAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAddress.h; sourceTree = "<group>"; };
-		21FB2F601F26E4440028ADEE /* UserAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAddress.m; sourceTree = "<group>"; };
-		21FB2F621F26E4440028ADEE /* AccountTf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTf.h; sourceTree = "<group>"; };
-		21FB2F631F26E4440028ADEE /* AccountTf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTf.m; sourceTree = "<group>"; };
-		21FB2F641F26E4440028ADEE /* CaptchaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
-		21FB2F651F26E4440028ADEE /* CaptchaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaView.m; sourceTree = "<group>"; };
-		21FB2F661F26E4440028ADEE /* ZHAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAddressCell.h; sourceTree = "<group>"; };
-		21FB2F671F26E4440028ADEE /* ZHAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAddressCell.m; sourceTree = "<group>"; };
-		21FB2F681F26E4440028ADEE /* ZHAddressChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAddressChooseView.h; sourceTree = "<group>"; };
-		21FB2F691F26E4440028ADEE /* ZHAddressChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAddressChooseView.m; sourceTree = "<group>"; };
 		21FB2F7F1F26E9EE0028ADEE /* address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = address.txt; sourceTree = "<group>"; };
 		21FB2F801F26E9EE0028ADEE /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
 		21FB2F811F26E9EE0028ADEE /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
@@ -626,12 +613,6 @@
 		21FB30691F26E9EF0028ADEE /* TLPageDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPageDataHelper.m; sourceTree = "<group>"; };
 		21FB306A1F26E9EF0028ADEE /* TLUploadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUploadManager.h; sourceTree = "<group>"; };
 		21FB306B1F26E9EF0028ADEE /* TLUploadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUploadManager.m; sourceTree = "<group>"; };
-		21FB30D01F26EBB50028ADEE /* TLUserForgetPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserForgetPwdVC.h; sourceTree = "<group>"; };
-		21FB30D11F26EBB50028ADEE /* TLUserForgetPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserForgetPwdVC.m; sourceTree = "<group>"; };
-		21FB30D21F26EBB50028ADEE /* TLUserLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserLoginVC.h; sourceTree = "<group>"; };
-		21FB30D31F26EBB50028ADEE /* TLUserLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserLoginVC.m; sourceTree = "<group>"; };
-		21FB30D41F26EBB50028ADEE /* TLUserRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserRegisterVC.h; sourceTree = "<group>"; };
-		21FB30D51F26EBB50028ADEE /* TLUserRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserRegisterVC.m; sourceTree = "<group>"; };
 		21FB30E41F2710EE0028ADEE /* MoxieSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieSDK.h; sourceTree = "<group>"; };
 		21FB30E51F2710EE0028ADEE /* libMoxieSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMoxieSDK.a; sourceTree = "<group>"; };
 		21FB30E71F2710EE0028ADEE /* mx_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_back@2x.png"; sourceTree = "<group>"; };
@@ -646,8 +627,6 @@
 		21FB30FA1F2722D60028ADEE /* DataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataView.m; sourceTree = "<group>"; };
 		21FB30FC1F2725520028ADEE /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		21FB30FD1F2725520028ADEE /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
-		21FB30FF1F2737730028ADEE /* TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
-		21FB31001F2737730028ADEE /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		63F0FF5CA6D8C7CAF539F595 /* Pods-Base_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Base_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Base_iOS/Pods-Base_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E041B8AEBBDCC121169B52FB /* libPods-Base_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Base_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -723,6 +702,60 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		210EBFEC1F31B269007E5395 /* ZMAuthResult */ = {
+			isa = PBXGroup;
+			children = (
+				210EBFED1F31B269007E5395 /* ZMAuthResultVC.h */,
+				210EBFEE1F31B269007E5395 /* ZMAuthResultVC.m */,
+				210EBFF71F31B269007E5395 /* ZMOPScoreResultVC.h */,
+				210EBFF81F31B269007E5395 /* ZMOPScoreResultVC.m */,
+				210EBFF51F31B269007E5395 /* ZMFoucsResultVC.h */,
+				210EBFF61F31B269007E5395 /* ZMFoucsResultVC.m */,
+				210EBFEF1F31B269007E5395 /* ZMCheatAuthResultVC.h */,
+				210EBFF01F31B269007E5395 /* ZMCheatAuthResultVC.m */,
+				210EBFF11F31B269007E5395 /* ZMCheatFoucsResultVC.h */,
+				210EBFF21F31B269007E5395 /* ZMCheatFoucsResultVC.m */,
+				210EBFF31F31B269007E5395 /* ZMCheatScoreResultVC.h */,
+				210EBFF41F31B269007E5395 /* ZMCheatScoreResultVC.m */,
+			);
+			path = ZMAuthResult;
+			sourceTree = "<group>";
+		};
+		210EBFFF1F31B270007E5395 /* LocalAuthResult */ = {
+			isa = PBXGroup;
+			children = (
+				210EC0001F31B2AD007E5395 /* RealNameAuthResultVC.h */,
+				210EC0011F31B2AD007E5395 /* RealNameAuthResultVC.m */,
+				210EC0031F31B2C5007E5395 /* BankCardAuthResultVC.h */,
+				210EC0041F31B2C5007E5395 /* BankCardAuthResultVC.m */,
+			);
+			path = LocalAuthResult;
+			sourceTree = "<group>";
+		};
+		21176ED21F32CEC400C5217A /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				21176ED31F32CEC400C5217A /* BarButton.h */,
+				21176ED41F32CEC400C5217A /* BarButton.m */,
+				21176ED51F32CEC400C5217A /* CustomTabBar.h */,
+				21176ED61F32CEC400C5217A /* CustomTabBar.m */,
+				21176ED71F32CEC400C5217A /* TabBarItem.h */,
+				21176ED81F32CEC400C5217A /* TabBarItem.m */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		21176EDC1F32CECA00C5217A /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				21176EDD1F32CEFC00C5217A /* AccountTf.h */,
+				21176EDE1F32CEFC00C5217A /* AccountTf.m */,
+				21176EDF1F32CEFC00C5217A /* CaptchaView.h */,
+				21176EE01F32CEFC00C5217A /* CaptchaView.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		212087521F2991B2007C781B /* InfoAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,39 +789,10 @@
 		2120875C1F2991B2007C781B /* MXAuth */ = {
 			isa = PBXGroup;
 			children = (
+				21155D1B1F2B13940004F189 /* MXOperatorAuthVC.h */,
+				21155D1C1F2B13940004F189 /* MXOperatorAuthVC.m */,
 			);
 			path = MXAuth;
-			sourceTree = "<group>";
-		};
-		21212A6F1F18CA880091A493 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				21212A761F18CED90091A493 /* Controller */,
-				21212A7A1F18CF010091A493 /* Model */,
-				21212A7B1F18CF010091A493 /* View */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		21212A761F18CED90091A493 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		21212A7A1F18CF010091A493 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		21212A7B1F18CF010091A493 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2168C67C1F28900200677D27 /* 芝麻信用 */ = {
@@ -808,16 +812,6 @@
 				2168C69A1F28935000677D27 /* AlipaySDK.framework */,
 			);
 			path = Alipay;
-			sourceTree = "<group>";
-		};
-		216AB7FE1F18AF92006C26A1 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F3D1F26E4440028ADEE /* Controller */,
-				21FB2F581F26E4440028ADEE /* Model */,
-				21FB2F611F26E4440028ADEE /* View */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		217738141F28B41C001EEABC /* 芝麻认证 */ = {
@@ -899,6 +893,10 @@
 				21F82B5E1F17719D0019B176 /* BaseModel.m */,
 				21158E441F1C4F9E00A07266 /* TabBarModel.h */,
 				21158E451F1C4F9E00A07266 /* TabBarModel.m */,
+				21176EE31F32CF4000C5217A /* TLUser.h */,
+				21176EE41F32CF4000C5217A /* TLUser.m */,
+				21176EE51F32CF4000C5217A /* TLUserExt.h */,
+				21176EE61F32CF4000C5217A /* TLUserExt.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -927,12 +925,8 @@
 				21F82B6A1F17719D0019B176 /* BaseCollectionView.m */,
 				21F82B6B1F17719D0019B176 /* BaseTableView.h */,
 				21F82B6C1F17719D0019B176 /* BaseTableView.m */,
-				21158E411F1C4F4D00A07266 /* CustomTabBar.h */,
-				21158E421F1C4F4D00A07266 /* CustomTabBar.m */,
-				21158E471F1C502400A07266 /* BarButton.h */,
-				21158E481F1C502400A07266 /* BarButton.m */,
-				21FB30FF1F2737730028ADEE /* TabBarItem.h */,
-				21FB31001F2737730028ADEE /* TabBarItem.m */,
+				21176EDC1F32CECA00C5217A /* TextField */,
+				21176ED21F32CEC400C5217A /* Tabbar */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -977,8 +971,6 @@
 			children = (
 				21FB30DA1F26F3C10028ADEE /* 数据时代 */,
 				21FB30D91F26F3660028ADEE /* 关于我们 */,
-				21212A6F1F18CA880091A493 /* Home */,
-				216AB7FE1F18AF92006C26A1 /* User */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1204,99 +1196,6 @@
 				21F82D761F1772BA0019B176 /* UShareUI.framework */,
 			);
 			path = UMSocialUI;
-			sourceTree = "<group>";
-		};
-		21FB2F3D1F26E4440028ADEE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F3E1F26E4440028ADEE /* Address */,
-				21FB2F451F26E4440028ADEE /* Base */,
-				21FB2F481F26E4440028ADEE /* Login */,
-				21FB2F4D1F26E4440028ADEE /* UserInfo */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		21FB2F3E1F26E4440028ADEE /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F3F1F26E4440028ADEE /* ZHAddAddressVC.h */,
-				21FB2F401F26E4440028ADEE /* ZHAddAddressVC.m */,
-				21FB2F411F26E4440028ADEE /* ZHAddressChooseVC.h */,
-				21FB2F421F26E4440028ADEE /* ZHAddressChooseVC.m */,
-				21FB2F431F26E4440028ADEE /* ZHReceivingAddress.h */,
-				21FB2F441F26E4440028ADEE /* ZHReceivingAddress.m */,
-			);
-			path = Address;
-			sourceTree = "<group>";
-		};
-		21FB2F451F26E4440028ADEE /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F461F26E4440028ADEE /* TLAccountBaseVC.h */,
-				21FB2F471F26E4440028ADEE /* TLAccountBaseVC.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		21FB2F481F26E4440028ADEE /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				21FB30D01F26EBB50028ADEE /* TLUserForgetPwdVC.h */,
-				21FB30D11F26EBB50028ADEE /* TLUserForgetPwdVC.m */,
-				21FB30D21F26EBB50028ADEE /* TLUserLoginVC.h */,
-				21FB30D31F26EBB50028ADEE /* TLUserLoginVC.m */,
-				21FB30D41F26EBB50028ADEE /* TLUserRegisterVC.h */,
-				21FB30D51F26EBB50028ADEE /* TLUserRegisterVC.m */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		21FB2F4D1F26E4440028ADEE /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F4E1F26E4440028ADEE /* BindMobileVC.h */,
-				21FB2F4F1F26E4440028ADEE /* BindMobileVC.m */,
-				21FB2F501F26E4440028ADEE /* TLAccountSetBaseVC.h */,
-				21FB2F511F26E4440028ADEE /* TLAccountSetBaseVC.m */,
-				21FB2F521F26E4440028ADEE /* TLChangeMobileVC.h */,
-				21FB2F531F26E4440028ADEE /* TLChangeMobileVC.m */,
-				21FB2F541F26E4440028ADEE /* TLPwdRelatedVC.h */,
-				21FB2F551F26E4440028ADEE /* TLPwdRelatedVC.m */,
-				21FB2F561F26E4440028ADEE /* ZHChangeNickNameVC.h */,
-				21FB2F571F26E4440028ADEE /* ZHChangeNickNameVC.m */,
-			);
-			path = UserInfo;
-			sourceTree = "<group>";
-		};
-		21FB2F581F26E4440028ADEE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F591F26E4440028ADEE /* TLBaseModel.h */,
-				21FB2F5A1F26E4440028ADEE /* TLBaseModel.m */,
-				21FB2F5B1F26E4440028ADEE /* TLUser.h */,
-				21FB2F5C1F26E4440028ADEE /* TLUser.m */,
-				21FB2F5D1F26E4440028ADEE /* TLUserExt.h */,
-				21FB2F5E1F26E4440028ADEE /* TLUserExt.m */,
-				21FB2F5F1F26E4440028ADEE /* UserAddress.h */,
-				21FB2F601F26E4440028ADEE /* UserAddress.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		21FB2F611F26E4440028ADEE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				21FB2F621F26E4440028ADEE /* AccountTf.h */,
-				21FB2F631F26E4440028ADEE /* AccountTf.m */,
-				21FB2F641F26E4440028ADEE /* CaptchaView.h */,
-				21FB2F651F26E4440028ADEE /* CaptchaView.m */,
-				21FB2F661F26E4440028ADEE /* ZHAddressCell.h */,
-				21FB2F671F26E4440028ADEE /* ZHAddressCell.m */,
-				21FB2F681F26E4440028ADEE /* ZHAddressChooseView.h */,
-				21FB2F691F26E4440028ADEE /* ZHAddressChooseView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		21FB2F7D1F26E9EE0028ADEE /* Section */ = {
@@ -1911,6 +1810,8 @@
 			children = (
 				212087501F2991B2007C781B /* DataVC.h */,
 				212087511F2991B2007C781B /* DataVC.m */,
+				210EBFFF1F31B270007E5395 /* LocalAuthResult */,
+				210EBFEC1F31B269007E5395 /* ZMAuthResult */,
 				212087521F2991B2007C781B /* InfoAuth */,
 				212087571F2991B2007C781B /* LocalAuth */,
 				2120875C1F2991B2007C781B /* MXAuth */,
@@ -2187,63 +2088,58 @@
 			files = (
 				21FB30731F26E9EF0028ADEE /* TLAlert.m in Sources */,
 				21FB30BD1F26E9EF0028ADEE /* UIControl+Block.m in Sources */,
-				21FB30D61F26EBB50028ADEE /* TLUserForgetPwdVC.m in Sources */,
+				210EBFFC1F31B269007E5395 /* ZMCheatScoreResultVC.m in Sources */,
 				21FB30921F26E9EF0028ADEE /* SGScanningQRCodeVC.m in Sources */,
+				210EBFF91F31B269007E5395 /* ZMAuthResultVC.m in Sources */,
 				21FB30FB1F2722D60028ADEE /* DataView.m in Sources */,
 				21F82CA11F17719D0019B176 /* BaseTableView.m in Sources */,
 				21FB309F1F26E9EF0028ADEE /* MovieAddComment.m in Sources */,
-				21FB2F711F26E4440028ADEE /* TLAccountSetBaseVC.m in Sources */,
 				2120876A1F29C3D3007C781B /* ZMFoucsModel.m in Sources */,
-				21FB2F751F26E4440028ADEE /* TLBaseModel.m in Sources */,
 				21FB30871F26E9EF0028ADEE /* TLDisplayPhotoVC.m in Sources */,
 				21FB30BB1F26E9EF0028ADEE /* UIButton+EnLargeEdge.m in Sources */,
 				212087601F2991B2007C781B /* BankCardAuthVC.m in Sources */,
 				21158E461F1C4F9E00A07266 /* TabBarModel.m in Sources */,
-				21FB2F771F26E4440028ADEE /* TLUserExt.m in Sources */,
 				21FB30B71F26E9EF0028ADEE /* NSMutableAttributedString+Custom.m in Sources */,
 				21FB30AE1F26E9EF0028ADEE /* NSNumber+TLAdd.m in Sources */,
 				21FB30881F26E9EF0028ADEE /* TLImagePickerController.m in Sources */,
 				21FB30A61F26E9EF0028ADEE /* HttpRequestObject.m in Sources */,
 				21FB30911F26E9EF0028ADEE /* SGGenerateQRCodeVC.m in Sources */,
+				21176EDB1F32CEC400C5217A /* TabBarItem.m in Sources */,
 				21FB308A1F26E9EF0028ADEE /* TLPhotoChooseItem.m in Sources */,
 				21FB30AF1F26E9EF0028ADEE /* NSObject+Custom.m in Sources */,
 				21FB30751F26E9EF0028ADEE /* TLComposeTextView.m in Sources */,
 				211E48FB1F28443900020DD2 /* MineCell.m in Sources */,
-				21FB2F761F26E4440028ADEE /* TLUser.m in Sources */,
 				21FB30711F26E9EF0028ADEE /* CustomDatePicker.m in Sources */,
 				21FB30761F26E9EF0028ADEE /* TLDatePicker.m in Sources */,
 				21FB307D1F26E9EF0028ADEE /* TLTextStorage.m in Sources */,
 				21F82C9B1F17719D0019B176 /* BaseModel.m in Sources */,
 				21F82CA01F17719D0019B176 /* BaseCollectionView.m in Sources */,
 				21FB30A91F26E9EF0028ADEE /* HttpSign.m in Sources */,
-				21FB2F7C1F26E4440028ADEE /* ZHAddressChooseView.m in Sources */,
 				2168C6971F28933800677D27 /* TLAlipayManager.m in Sources */,
 				21FB30891F26E9EF0028ADEE /* TLPhotoCell.m in Sources */,
 				21FB308F1F26E9EF0028ADEE /* SortBar.m in Sources */,
+				21155D1D1F2B13940004F189 /* MXOperatorAuthVC.m in Sources */,
 				21FB30C81F26E9EF0028ADEE /* UIView+ZYDraggable.m in Sources */,
 				21F82CA41F17719D0019B176 /* TLCurrencyHelper.m in Sources */,
 				212087731F29EC72007C781B /* ZMCheatFoucsNameVC.m in Sources */,
 				212087701F29EB15007C781B /* ZMCheatAuthVC.m in Sources */,
 				2120875F1F2991B2007C781B /* ZMOPScoreVC.m in Sources */,
 				21FB30BC1F26E9EF0028ADEE /* UIColor+Custom.m in Sources */,
-				21FB2F731F26E4440028ADEE /* TLPwdRelatedVC.m in Sources */,
 				21F82D231F1771DE0019B176 /* TLBaseVC.m in Sources */,
-				21FB30D81F26EBB50028ADEE /* TLUserRegisterVC.m in Sources */,
+				210EC0051F31B2C5007E5395 /* BankCardAuthResultVC.m in Sources */,
 				21F82C9D1F17719D0019B176 /* BaseWKWebViewController.m in Sources */,
 				21FB30A71F26E9EF0028ADEE /* HttpRequestService.m in Sources */,
+				21176EE11F32CEFC00C5217A /* AccountTf.m in Sources */,
 				21FB306D1F26E9EF0028ADEE /* AddressPickerView.m in Sources */,
 				21FB307E1F26E9EF0028ADEE /* TLTextView.m in Sources */,
 				21FB30B31F26E9EF0028ADEE /* NSString+TextView.m in Sources */,
-				21FB30D71F26EBB50028ADEE /* TLUserLoginVC.m in Sources */,
-				21158E431F1C4F4D00A07266 /* CustomTabBar.m in Sources */,
 				21FB30BA1F26E9EF0028ADEE /* UIButton+Custom.m in Sources */,
 				21FB30701F26E9EF0028ADEE /* CircleGuideView.m in Sources */,
-				21FB2F721F26E4440028ADEE /* TLChangeMobileVC.m in Sources */,
+				21176EE81F32CF4000C5217A /* TLUserExt.m in Sources */,
 				21FB30C21F26E9EF0028ADEE /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				21F82C9C1F17719D0019B176 /* BaseViewController.m in Sources */,
 				21FB308C1F26E9EF0028ADEE /* SelectPhotoUtil.m in Sources */,
 				21FB30801F26E9EF0028ADEE /* ZHSegmentView.m in Sources */,
-				21FB2F6A1F26E4440028ADEE /* ZHAddAddressVC.m in Sources */,
 				21FB30FE1F2725520028ADEE /* DataModel.m in Sources */,
 				21FB30B11F26E9EF0028ADEE /* NSString+Custom.m in Sources */,
 				21FB30A31F26E9EF0028ADEE /* UICKeyChainStore.m in Sources */,
@@ -2253,18 +2149,19 @@
 				21F82CA51F17719D0019B176 /* TLWXManager.m in Sources */,
 				21FB30821F26E9EF0028ADEE /* WTReParser.m in Sources */,
 				21FB30B81F26E9EF0028ADEE /* UIApplication+Custom.m in Sources */,
+				21176ED91F32CEC400C5217A /* BarButton.m in Sources */,
 				21FB307F1F26E9EF0028ADEE /* TLTimeButton.m in Sources */,
 				21FB30791F26E9EF0028ADEE /* TLPlaceholderView.m in Sources */,
-				21FB2F7B1F26E4440028ADEE /* ZHAddressCell.m in Sources */,
 				211E48F51F2842D700020DD2 /* MineGroup.m in Sources */,
 				21FB30771F26E9EF0028ADEE /* TLImagePicker.m in Sources */,
 				21FB30B01F26E9EF0028ADEE /* NSAttributedString+add.m in Sources */,
 				21FB30C01F26E9EF0028ADEE /* UIImage+ImageEffects.m in Sources */,
 				2120875D1F2991B2007C781B /* DataVC.m in Sources */,
 				21FB30781F26E9EF0028ADEE /* TLPickerTextField.m in Sources */,
-				21FB2F781F26E4440028ADEE /* UserAddress.m in Sources */,
+				210EBFFE1F31B269007E5395 /* ZMOPScoreResultVC.m in Sources */,
 				212087671F299546007C781B /* ZMScoreModel.m in Sources */,
 				21FB30A21F26E9EF0028ADEE /* TextView.m in Sources */,
+				21176EE71F32CF4000C5217A /* TLUser.m in Sources */,
 				21FB30BE1F26E9EF0028ADEE /* UIFont+UI.m in Sources */,
 				21FB30F21F27114A0028ADEE /* MineVC.m in Sources */,
 				21F82C9E1F17719D0019B176 /* NavigationController.m in Sources */,
@@ -2273,16 +2170,19 @@
 				21FB30CF1F26E9EF0028ADEE /* TLUploadManager.m in Sources */,
 				21F82C9F1F17719D0019B176 /* TabbarViewController.m in Sources */,
 				21FB30B91F26E9EF0028ADEE /* UIBarButtonItem+BackItem.m in Sources */,
+				210EC0021F31B2AD007E5395 /* RealNameAuthResultVC.m in Sources */,
 				21FB30C41F26E9EF0028ADEE /* UITableViewCell+UITouch.m in Sources */,
 				21FB30A81F26E9EF0028ADEE /* HttpRequestTool.m in Sources */,
 				21FB30C31F26E9EF0028ADEE /* UIScrollView+UITouch.m in Sources */,
 				21FB30CC1F26E9EF0028ADEE /* UIViewController+MethodSwizzling.m in Sources */,
 				21FB30CE1F26E9EF0028ADEE /* TLPageDataHelper.m in Sources */,
 				2120875E1F2991B2007C781B /* ZMAuthVC.m in Sources */,
+				210EBFFD1F31B269007E5395 /* ZMFoucsResultVC.m in Sources */,
+				210EBFFA1F31B269007E5395 /* ZMCheatAuthResultVC.m in Sources */,
 				21FB30A51F26E9EF0028ADEE /* HttpLogger.m in Sources */,
 				21FB307A1F26E9EF0028ADEE /* TLProgressHUD.m in Sources */,
 				21FB30C61F26E9EF0028ADEE /* UIView+Responder.m in Sources */,
-				21FB2F791F26E4440028ADEE /* AccountTf.m in Sources */,
+				21176EE21F32CEFC00C5217A /* CaptchaView.m in Sources */,
 				21FB306E1F26E9EF0028ADEE /* City.m in Sources */,
 				21FB308E1F26E9EF0028ADEE /* SelectView.m in Sources */,
 				21FB30B21F26E9EF0028ADEE /* NSString+Extension.m in Sources */,
@@ -2294,7 +2194,6 @@
 				21FB30CD1F26E9EF0028ADEE /* TLNetworking.m in Sources */,
 				21FB30C51F26E9EF0028ADEE /* UIView+Custom.m in Sources */,
 				212087761F29EE07007C781B /* ZMCheatFoucsModel.m in Sources */,
-				21FB2F6D1F26E4440028ADEE /* TLAccountBaseVC.m in Sources */,
 				21FB30901F26E9EF0028ADEE /* ScanSuccessJumpVC.m in Sources */,
 				21FB30B41F26E9EF0028ADEE /* CALayer+CGColor.m in Sources */,
 				21F82D1F1F17719D0019B176 /* main.m in Sources */,
@@ -2303,33 +2202,28 @@
 				21FB30C71F26E9EF0028ADEE /* UIView+XMGExtension.m in Sources */,
 				21F82C9A1F17719D0019B176 /* AppDelegate.mm in Sources */,
 				21FB30AD1F26E9EF0028ADEE /* NSDictionary+Custom.m in Sources */,
-				21FB2F6B1F26E4440028ADEE /* ZHAddressChooseVC.m in Sources */,
-				21158E491F1C502400A07266 /* BarButton.m in Sources */,
 				21FB30831F26E9EF0028ADEE /* WTReTextField.m in Sources */,
 				21FB30951F26E9EF0028ADEE /* SGQRCodeTool.m in Sources */,
-				21FB2F7A1F26E4440028ADEE /* CaptchaView.m in Sources */,
 				21FB30931F26E9EF0028ADEE /* SGAlertView.m in Sources */,
 				21FB307B1F26E9EF0028ADEE /* TLTableView.m in Sources */,
-				21FB2F701F26E4440028ADEE /* BindMobileVC.m in Sources */,
 				21FB30741F26E9EF0028ADEE /* TLCaptchaView.m in Sources */,
 				2120876D1F29C6C0007C781B /* ZMCheatScoreVC.m in Sources */,
 				21FB30A11F26E9EF0028ADEE /* CustomTextView.m in Sources */,
 				21F82CA31F17719D0019B176 /* TLAuthHelper.m in Sources */,
+				210EBFFB1F31B269007E5395 /* ZMCheatFoucsResultVC.m in Sources */,
+				21176EDA1F32CEC400C5217A /* CustomTabBar.m in Sources */,
 				21FB306F1F26E9EF0028ADEE /* Province.m in Sources */,
 				21FB309D1F26E9EF0028ADEE /* ShareFunction.m in Sources */,
-				21FB31011F2737730028ADEE /* TabBarItem.m in Sources */,
 				21FB30B51F26E9EF0028ADEE /* LKViewAttribute.m in Sources */,
 				21FB309B1F26E9EF0028ADEE /* SGScanningQRCodeView.m in Sources */,
 				21FB30B61F26E9EF0028ADEE /* LabelModel.m in Sources */,
 				21FB30861F26E9EF0028ADEE /* TLChooseResultManager.m in Sources */,
-				21FB2F6C1F26E4440028ADEE /* ZHReceivingAddress.m in Sources */,
 				21FB30CA1F26E9EF0028ADEE /* HTMLStrVC.m in Sources */,
 				21F82C991F17719D0019B176 /* AppDelegate+Launch.m in Sources */,
 				212087791F2A0330007C781B /* ZMCheatAuthModel.m in Sources */,
 				21FB30C91F26E9EF0028ADEE /* UIViewExt.m in Sources */,
 				21FB30AC1F26E9EF0028ADEE /* NSArray+Custom.m in Sources */,
 				21FB30A41F26E9EF0028ADEE /* ZipImg.m in Sources */,
-				21FB2F741F26E4440028ADEE /* ZHChangeNickNameVC.m in Sources */,
 				21FB30BF1F26E9EF0028ADEE /* UIImage+Custom.m in Sources */,
 				21FB30AA1F26E9EF0028ADEE /* AppConfig.m in Sources */,
 				21FB30C11F26E9EF0028ADEE /* UILabel+Custom.m in Sources */,
